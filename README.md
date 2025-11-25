@@ -47,7 +47,9 @@ Yes, it was sad leaving family, friends, girlfriend, and home. But I believe it 
 ## Contact
 
 - **GitHub:** [@mfhonley](https://github.com/mfhonley)
-- **Twitter:** [@mfhonley](https://twitter.com/mfhonley)
+- **Twitter:** [@mfhonley](https://x.com/mfhonley)
+- **LinkedIn:** [@mfhonley](https://www.linkedin.com/in/mfhonley/)
+- **YouTube:** [@mfhonley](https://www.youtube.com/@mfhonley)
 - **Telegram:** [@mfhonley](https://t.me/mfhonley)
 - **Email:** [me@thehonley.org](mailto:me@thehonley.org)
 
