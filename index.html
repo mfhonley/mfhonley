@@ -7,171 +7,153 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.svg">
     <link rel="apple-touch-icon" href="logo.svg">
-    <link rel="shortcut icon" href="logo.svg">
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Decorative SVG background -->
+    <div class="decoration decoration-right" aria-hidden="true">
+        <svg viewBox="0 0 200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="vine" d="M100 0 Q120 50 100 100 Q80 150 100 200 Q120 250 100 300 Q80 350 100 400 Q120 450 100 500 Q80 550 100 600" stroke="currentColor" stroke-width="1" fill="none"/>
+            <path class="leaf" d="M100 80 Q130 60 140 80 Q130 100 100 80" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <path class="leaf" d="M100 180 Q70 160 60 180 Q70 200 100 180" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <path class="leaf" d="M100 280 Q130 260 140 280 Q130 300 100 280" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <path class="leaf" d="M100 380 Q70 360 60 380 Q70 400 100 380" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            <circle class="grape" cx="135" cy="120" r="4" fill="currentColor" opacity="0.3"/>
+            <circle class="grape" cx="145" cy="130" r="4" fill="currentColor" opacity="0.3"/>
+            <circle class="grape" cx="140" cy="140" r="4" fill="currentColor" opacity="0.3"/>
+            <circle class="grape" cx="65" cy="220" r="4" fill="currentColor" opacity="0.3"/>
+            <circle class="grape" cx="55" cy="230" r="4" fill="currentColor" opacity="0.3"/>
+            <circle class="grape" cx="60" cy="240" r="4" fill="currentColor" opacity="0.3"/>
+        </svg>
+    </div>
+
     <nav class="nav">
-        <div class="container">
-            <a href="#" class="logo">honley</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <svg class="sun" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M10 1V3M10 17V19M19 10H17M3 10H1M16.071 3.929L14.657 5.343M5.343 14.657L3.929 16.071M16.071 16.071L14.657 14.657M5.343 5.343L3.929 3.929" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-                <svg class="moon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
+        <a href="#about" class="nav-link">À propos</a>
+        <a href="#work" class="nav-link">Projets</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 1V3M10 17V19M19 10H17M3 10H1M16.071 3.929L14.657 5.343M5.343 14.657L3.929 16.071M16.071 16.071L14.657 14.657M5.343 5.343L3.929 3.929" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </nav>
 
     <main>
-        <article class="article">
-            <div class="article-container">
-                <header class="article-header">
-                    <p class="article-meta">16 · Developer · Almaty</p>
-                    <h1 class="article-title">honley — workshop</h1>
-                    <p class="article-lead">
-                        I started programming in 8th grade when I realized I wanted to build not just something useful,
-                        but something that people would know was made by me. I wanted people to recognize my creations
-                        and value my contribution to society.
-                    </p>
-                </header>
+        <!-- Hero Section -->
+        <section class="hero">
+            <p class="hero-tag">NEW &nbsp;Building CatOps</p>
+            <h1 class="hero-title">HONLEY</h1>
+            <p class="hero-subtitle">Developer crafting digital experiences. The maker of <strong>CatOps</strong>.</p>
+        </section>
 
-                <div class="article-content">
-                    <section class="article-section">
-                        <p>
-                            My first project was a Telegram bot for school. I remember the feeling when the first hundred
-                            people started using it. It was amazing to realize that people were actually using what I built.
-                        </p>
-                        <p>
-                            Then I started taking freelance orders while still in school, participated in informatics
-                            and database olympiads. Later came hackathons — winning prizes, including making it to the
-                            NASA Space Apps Challenge finals out of 8,000 teams (October 2024).
-                        </p>
-                        <p>
-                            Found my first job — worked at Traffy, Asquids, and various Telegram Mini Apps projects.
-                            Worked with blockchain, built a crypto payment gateway that's still being used today.
-                            After that, worked at a fintech company where I dove even deeper into this space.
-                        </p>
-                        <p>
-                            Summer 2025, got into nFactorial Incubator, made it to Demo Day among 80 projects.
-                            <a href="https://menoai.site" target="_blank" class="inline-link">menoai.site</a> reached 800+ users,
-                            but decided to move on, not seeing a future in the project.
-                        </p>
-                    </section>
+        <!-- About Section -->
+        <section class="content" id="about">
+            <p class="lead">
+                I started programming in 8th grade when I realized I wanted to build not just something useful,
+                but something that people would know was made by me. I wanted people to recognize my creations
+                and value my contribution to society.
+            </p>
 
-                    <section class="article-section">
-                        <h2>CatOps</h2>
-                        <p>
-                            Decided to pivot to DevOps, building CatOps — AI-powered monitoring for developers.
-                            Saw the problem in my own projects: it takes too long to set up monitoring and make sure
-                            the project doesn't crash. Especially for startups, time is money, and spending it on
-                            infrastructure setup is pretty stupid.
-                        </p>
+            <p>
+                My first project was a Telegram bot for school. I remember the feeling when the first hundred
+                people started using it. It was amazing to realize that people were actually using what I built.
+            </p>
 
-                        <div class="callout">
-                            <div class="callout-header">
-                                <h3>CatOps</h3>
-                                <span class="badge">Current</span>
-                            </div>
-                            <p>AI-powered monitoring that sets up in minutes</p>
-                            <ul class="feature-list">
-                                <li>Quick setup for startups</li>
-                                <li>AI-powered analysis and solutions</li>
-                                <li>Telegram integration</li>
-                                <li>Open Source — 40+</li>
-                            </ul>
-                            <div class="callout-footer">
-                                <span class="tech-tag">Go</span>
-                                <span class="tech-tag">AI/ML</span>
-                                <span class="tech-tag">DevOps</span>
-                            </div>
-                            <a href="https://catops.app" class="link-arrow" target="_blank">catops.app →</a>
-                        </div>
-                    </section>
+            <p>
+                Then I started taking freelance orders while still in school, participated in informatics
+                and database olympiads. Later came hackathons — winning prizes, including making it to the
+                <strong>NASA Space Apps Challenge</strong> finals out of 8,000 teams.
+            </p>
 
-                    <section class="article-section">
-                        <h2>Almaty</h2>
-                        <p>
-                            At the same time, moved from my parents' place to Almaty at 16 and got a job as a developer
-                            at one of the companies that offered me a position. Decided to explore something new.
-                        </p>
-                        <p>
-                            Yes, it was sad leaving family, friends, girlfriend, and home. But I believe it was
-                            worth it and will pay off.
-                        </p>
-                    </section>
+            <p>
+                Found my first job — worked at Traffy, Asquids, and various Telegram Mini Apps projects.
+                Worked with blockchain, built a crypto payment gateway that's still being used today.
+                After that, worked at a fintech company where I dove even deeper into this space.
+            </p>
 
-                    <section class="article-section">
-                        <h2>Stack</h2>
-                        <div class="stack-grid">
-                            <div class="stack-category">
-                                <h4>Languages</h4>
-                                <p>Python, Go, JavaScript, Node.js</p>
-                            </div>
-                            <div class="stack-category">
-                                <h4>Frameworks</h4>
-                                <p>FastAPI, Express.js, aiogram</p>
-                            </div>
-                            <div class="stack-category">
-                                <h4>Blockchain</h4>
-                                <p>Crypto payments, Web3</p>
-                            </div>
-                            <div class="stack-category">
-                                <h4>DevOps</h4>
-                                <p>Docker, Monitoring, AI/ML</p>
-                            </div>
-                        </div>
-                    </section>
+            <p>
+                Summer 2025, got into nFactorial Incubator, made it to Demo Day among 80 projects.
+                <a href="https://menoai.site" target="_blank">menoai.site</a> reached 800+ users,
+                but decided to move on, not seeing a future in the project.
+            </p>
+        </section>
 
-                    <section class="article-section">
-                        <h2>Contact</h2>
-                        <div class="contact-grid">
-                            <a href="https://github.com/mfhonley" class="contact-card" target="_blank">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-value">@mfhonley</span>
-                            </a>
-                            <a href="https://x.com/mfhonley" class="contact-card" target="_blank">
-                                <span class="contact-label">Twitter</span>
-                                <span class="contact-value">@mfhonley</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mfhonley/" class="contact-card" target="_blank">
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-value">@mfhonley</span>
-                            </a>
-                            <a href="https://www.youtube.com/@mfhonley" class="contact-card" target="_blank">
-                                <span class="contact-label">YouTube</span>
-                                <span class="contact-value">@mfhonley</span>
-                            </a>
-                            <a href="https://t.me/mfhonley" class="contact-card" target="_blank">
-                                <span class="contact-label">Telegram</span>
-                                <span class="contact-value">@mfhonley</span>
-                            </a>
-                            <a href="mailto:contact@mfhonley.com" class="contact-card">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">me@thehonley.org</span>
-                            </a>
-                        </div>
-                    </section>
+        <!-- CatOps Section -->
+        <section class="content" id="work">
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>CatOps</h2>
+                    <span class="badge">En cours</span>
                 </div>
-
-                <footer class="article-footer">
-                    <p>17 · Almaty · 2025</p>
-                </footer>
+                <p class="project-desc">AI-powered monitoring that sets up in minutes, not hours.</p>
+                <ul class="feature-list">
+                    <li>Quick setup for startups</li>
+                    <li>AI-powered analysis and solutions</li>
+                    <li>Telegram integration</li>
+                    <li>Open Source — 40+ stars</li>
+                </ul>
+                <div class="tech-tags">
+                    <span>Go</span>
+                    <span>AI/ML</span>
+                    <span>DevOps</span>
+                </div>
+                <a href="https://catops.app" target="_blank" class="project-link">catops.app →</a>
             </div>
-        </article>
+        </section>
+
+        <!-- Stack Section -->
+        <section class="content">
+            <h2 class="section-title">Compétences</h2>
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <h3>Langages</h3>
+                    <p>Python, Go, JavaScript, Node.js</p>
+                </div>
+                <div class="stack-item">
+                    <h3>Frameworks</h3>
+                    <p>FastAPI, Express.js, aiogram</p>
+                </div>
+                <div class="stack-item">
+                    <h3>Blockchain</h3>
+                    <p>Crypto payments, Web3</p>
+                </div>
+                <div class="stack-item">
+                    <h3>DevOps</h3>
+                    <p>Docker, Monitoring, AI/ML</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-intro">
+                For inquiries, please contact <a href="mailto:me@thehonley.org">me@thehonley.org</a>
+            </p>
+            <div class="contact-links">
+                <a href="https://github.com/mfhonley" target="_blank">GitHub</a>
+                <a href="https://x.com/mfhonley" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/in/mfhonley/" target="_blank">LinkedIn</a>
+                <a href="https://t.me/mfhonley" target="_blank">Telegram</a>
+                <a href="https://www.youtube.com/@mfhonley" target="_blank">YouTube</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>17 · Almaty · 2025</p>
+        </footer>
     </main>
 
     <script src="script.js"></script>
-    <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
 </body>
 </html>
