@@ -100,55 +100,43 @@ body {
     display: block;
 }
 
+/* Napoleon image on the left */
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100vh;
+    background: url('back.jpg') center top / cover no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 900px) {
+    body::before { display: none; }
+}
+
 /* Hero Section */
 .hero {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 120px 40px 60px;
-    position: relative;
-    background: url('back.jpg') 70% 12% / cover no-repeat;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, var(--bg-primary) 0%, rgba(253,252,250,0.9) 40%, rgba(253,252,250,0.5) 100%);
-}
-
-[data-theme="dark"] .hero::before {
-    background: linear-gradient(to right, var(--bg-primary) 0%, rgba(13,13,13,0.9) 40%, rgba(13,13,13,0.5) 100%);
-}
-
-.hero > * { position: relative; z-index: 1; }
-
-.hero-tag {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--text-tertiary);
-    padding: 6px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    margin-bottom: 32px;
+    padding: 120px 40px 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .hero-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(60px, 12vw, 140px);
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    line-height: 1;
-    margin-bottom: 24px;
+    font-size: clamp(32px, 7vw, 48px);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 .hero-subtitle {
     font-size: 16px;
     color: var(--text-secondary);
-    max-width: 420px;
     line-height: 1.7;
 }
 
@@ -156,25 +144,28 @@ body {
 
 /* Content Sections */
 .content {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 80px 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 30px 40px;
     position: relative;
     z-index: 1;
 }
 
 .lead {
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: 300;
 }
 
 .content p {
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 .content p strong {
@@ -198,10 +189,10 @@ body {
 /* Section Title */
 .section-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.05em;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: var(--text-primary);
 }
 
@@ -284,8 +275,15 @@ body {
 
 .project-desc {
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     font-size: 17px;
+}
+
+.project-name-origin {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-tertiary);
+    margin-bottom: 24px;
 }
 
 .feature-list {
@@ -393,15 +391,17 @@ body {
 
 /* Footer */
 .footer {
-    text-align: center;
-    padding: 60px 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 20px 40px;
     border-top: 1px solid var(--border-color);
 }
 
 .footer p {
-    font-size: 13px;
+    font-size: 11px;
     color: var(--text-tertiary);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 /* Responsive */
