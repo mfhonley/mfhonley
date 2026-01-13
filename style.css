@@ -404,60 +404,108 @@ body::before {
     letter-spacing: 0.05em;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - Tablet */
+@media (max-width: 900px) {
+    body::before {
+        display: none;
+    }
+
+    .hero,
+    .content,
+    .footer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        padding: 100px 32px 24px;
+        text-align: center;
+    }
+
+    .content {
+        padding: 24px 32px;
+    }
+
+    .footer {
+        padding: 20px 32px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
     .nav {
-        top: 20px;
-        right: 20px;
-        gap: 20px;
+        top: 16px;
+        right: 16px;
+        gap: 16px;
     }
 
     .nav-link {
         font-size: 13px;
     }
 
-    .hero-title {
-        letter-spacing: 0.1em;
+    .hero {
+        padding: 80px 20px 20px;
     }
 
-    .hero-tag {
-        font-size: 11px;
-        margin-bottom: 40px;
+    .hero-title {
+        font-size: 28px;
+        letter-spacing: 0.02em;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
     }
 
     .content {
-        padding: 60px 24px;
+        padding: 20px;
+    }
+
+    .content p {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .footer {
+        padding: 16px 20px;
     }
 
     .project-card {
-        padding: 32px 24px;
+        padding: 24px 20px;
     }
 
     .stack-grid {
         grid-template-columns: 1fr;
     }
 
-    .decoration {
-        display: none;
-    }
-
     .contact-links {
-        gap: 20px;
+        gap: 16px;
     }
 }
 
-@media (max-width: 480px) {
+/* Responsive - Small Mobile */
+@media (max-width: 400px) {
     .nav {
-        gap: 16px;
+        gap: 12px;
     }
 
     .nav-link:not(:last-of-type) {
         display: none;
     }
 
+    .hero-title {
+        font-size: 24px;
+    }
+
     .hero-subtitle {
-        font-size: 16px;
-        padding: 0 20px;
+        font-size: 14px;
+    }
+
+    .content p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     .project-header {
@@ -470,4 +518,47 @@ body::before {
 /* Smooth transitions */
 a, button, .project-card, .stack-item {
     transition: all 0.3s ease;
+}
+
+/* Theme transition animation - circle expands from click point */
+@keyframes theme-transition-expand {
+    0% {
+        clip-path: circle(0% at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+    100% {
+        clip-path: circle(150% at var(--theme-transition-x, 50%) var(--theme-transition-y, 50%));
+    }
+}
+
+/* View Transitions API for theme switching */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+    z-index: 1;
+}
+
+::view-transition-new(root) {
+    z-index: 9999;
+    animation: theme-transition-expand 0.5s ease-out forwards;
+}
+
+/* Fallback for browsers without View Transitions API */
+.theme-transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    animation: theme-transition-expand 0.5s ease-out forwards;
+}
+
+.theme-transition-overlay.dark {
+    background-color: #0d0d0d;
+}
+
+.theme-transition-overlay.light {
+    background-color: #fdfcfa;
 }

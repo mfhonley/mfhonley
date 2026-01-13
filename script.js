@@ -6,12 +6,43 @@ const html = document.documentElement;
 const currentTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', currentTheme);
 
-themeToggle.addEventListener('click', () => {
+themeToggle.addEventListener('click', (event) => {
     const theme = html.getAttribute('data-theme');
     const newTheme = theme === 'light' ? 'dark' : 'light';
 
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    // Get click coordinates for animation origin
+    const x = event.clientX + 'px';
+    const y = event.clientY + 'px';
+
+    // Set CSS variables for animation origin
+    html.style.setProperty('--theme-transition-x', x);
+    html.style.setProperty('--theme-transition-y', y);
+
+    // Use View Transitions API if available
+    if (document.startViewTransition) {
+        document.startViewTransition(() => {
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    } else {
+        // Fallback for browsers without View Transitions API
+        const overlay = document.createElement('div');
+        overlay.className = 'theme-transition-overlay ' + newTheme;
+        overlay.style.setProperty('--theme-transition-x', x);
+        overlay.style.setProperty('--theme-transition-y', y);
+        document.body.appendChild(overlay);
+
+        // Change theme when overlay covers most of the screen
+        setTimeout(() => {
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }, 250);
+
+        // Remove overlay after animation completes
+        setTimeout(() => {
+            overlay.remove();
+        }, 500);
+    }
 });
 
 // Smooth scroll for anchor links
