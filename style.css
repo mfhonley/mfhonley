@@ -113,8 +113,38 @@ body::before {
     z-index: 0;
 }
 
+/* Napoleon link overlay */
+.napoleon-link {
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.napoleon-link span {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 24px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.napoleon-link:hover span {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+}
+
 @media (max-width: 900px) {
     body::before { display: none; }
+    .napoleon-link { display: none; }
 }
 
 /* Hero Section */
@@ -404,10 +434,19 @@ body::before {
     letter-spacing: 0.05em;
 }
 
+/* Mobile-only elements */
+.mobile-only {
+    display: none;
+}
+
 /* Responsive - Tablet */
 @media (max-width: 900px) {
     body::before {
         display: none;
+    }
+
+    .mobile-only {
+        display: inline;
     }
 
     .hero,
