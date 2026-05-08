@@ -1,47 +1,40 @@
 # honley — workshop
 
-**16 · Developer · Almaty**
+**17 · Developer & Founder · Almaty**
 
-I started programming in 8th grade when I realized I wanted to build not just something useful, but something that people would know was made by me. I wanted people to recognize my creations and value my contribution to society.
+I started programming in 8th grade when I realized I wanted to build not just something useful, but something that people would know was made by me.
+
+## MindZan → FOC World
+
+Built [MindZan](https://mindzan.com) — a mental arithmetic platform with modern design, gamification, and dual web/mobile access. Created in 3 weeks. Attracted training centers as early clients.
+
+Sold MindZan for **$10K** to **FOC**, Central Asia's leading mental arithmetic olympiad organizer, and joined them as CTO of **FOC World** to scale it beyond the region.
+
+I spent 5 years competing in mental arithmetic and became a republican champion before leaving to learn programming. Came back to rebuild it better — and it worked.
 
 ## Journey
 
-My first project was a Telegram bot for school. I remember the feeling when the first hundred people started using it. It was amazing to realize that people were actually using what I built.
+My first project was a Telegram bot for school. Then freelance orders, informatics and database olympiads, hackathons — including NASA Space Apps Challenge finals out of 8,000 teams (Oct 2024) and WorldSkills regional gold.
 
-Then I started taking freelance orders while still in school, participated in informatics and database olympiads. Later came hackathons — winning prizes, including making it to the NASA Space Apps Challenge finals out of 8,000 teams (October 2024).
+Worked at Traffy, Asquids, and various Telegram Mini Apps projects. Built a crypto payment gateway that's still being used today. By age 15, I was earning 500,000 tenge/month doing Telegram Mini App backend work.
 
-Found my first job — worked at Traffy, Asquids, and various Telegram Mini Apps projects. Worked with blockchain, built a crypto payment gateway that's still being used today. After that, worked at a fintech company where I dove even deeper into this space.
+Worked as Software Engineer at [bfinance.app](https://bfinance.app) and Fullstack Middle Developer at [nFactorial.school](https://nfactorial.school) (Sept 2025 – Jan 2026).
 
-Summer 2025, got into nFactorial Incubator, made it to Demo Day among 80 projects. [menoai.site](https://menoai.site) reached 800+ users, but decided to move on, not seeing a future in the project.
+Summer 2025, got into nFactorial Incubator, made it to Demo Day among 80 projects with [menoai.site](https://menoai.site) (800+ users).
 
-## CatOps
+## Earlier Attempts
 
-Decided to pivot to DevOps, building CatOps — AI-powered monitoring for developers. Saw the problem in my own projects: it takes too long to set up monitoring and make sure the project doesn't crash. Especially for startups, time is money, and spending it on infrastructure setup is pretty stupid.
+Had startup attempts before MindZan — CatOps (AI-powered monitoring for developers), among others. Researched problems, markets, spaces. Nothing clicked until I returned to a field I actually understand.
 
-**Features:**
-- Quick setup for startups
-- AI-powered analysis and solutions
-- Telegram integration
-- Open Source — 40+ stars
+## Acting
 
-**Tech:** Go, AI/ML, DevOps
-
-**[Visit CatOps →](https://catops.app)**
-
-## Almaty
-
-At the same time, moved from my parents' place to Almaty at 16 and got a job as a developer at one of the companies that offered me a position. Decided to explore something new.
-
-Yes, it was sad leaving family, friends, girlfriend, and home. But I believe it was worth it and will pay off.
+Built [chatly.top](https://chatly.top) in 7 days for a [documentary](https://youtu.be/x8VpX_Y02dc).
 
 ## Stack
 
 **Languages:** Python, Go, JavaScript, Node.js
-
 **Frameworks:** FastAPI, Express.js, aiogram
-
 **Blockchain:** Crypto payments, Web3
-
 **DevOps:** Docker, Monitoring, AI/ML
 
 ## Contact
@@ -53,6 +46,10 @@ Yes, it was sad leaving family, friends, girlfriend, and home. But I believe it 
 - **Telegram:** [@mfhonley](https://t.me/mfhonley)
 - **Email:** [zhan@mindzan.com](mailto:zhan@mindzan.com)
 
+## Press
+
+- [digitalbusiness.kz — Школьник из Павлодара в 15 лет уже зарабатывал 500 тысяч тенге, а в 17 успешно продал стартап](https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/)
+
 ---
 
-<sub>17 · Almaty · 2025</sub>
+<sub>17 · Almaty · 2026</sub>
