@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://mfhonley.com/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mfhonley.com/og-image.png</image:loc>
+      <image:title>Zhan Beissikeyev (Жан Бейсикеев) — Honley</image:title>
+      <image:caption>Zhan Beissikeyev — 17 y.o. developer and founder from Kazakhstan, CTO at FOC World</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mfhonley.com/llms.txt</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mfhonley.com/README.md</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

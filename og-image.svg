@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;family=Inter:wght@300;400&amp;display=swap');
+      .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+      .sub  { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; }
+      .url  { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; letter-spacing: 0.1em; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <g transform="translate(100, 235) scale(1)">
+    <rect width="159" height="159" rx="20" fill="#000000"/>
+    <path d="M59.3 98.2L73.4 54.3C73.5333 53.7 73.8667 53.4 74.4 53.4H77.7C79.2333 53.4 80.5333 53.9 81.6 54.9C82.6667 55.9 83.2333 57.2667 83.3 59L86 108.1C86 108.7 85.7667 109 85.3 109H79.2C78.6667 109 78.4 108.7 78.4 108.1L76.3 67.4L63 108.1C62.8 108.7 62.4 109 61.8 109H56.3C55.8333 109 55.4667 108.7 55.2 108.1L42.4 67.8L40.2 108.1C40.2 108.7 39.9667 109 39.5 109H33.3C32.8333 109 32.6 108.7 32.6 108.1L35.6 54.3C35.6 53.7 35.8667 53.4 36.4 53.4H39.6C41.5333 53.4 43 53.7333 44 54.4C45 55.0667 45.7333 56.2333 46.2 57.9L59.3 98.2ZM104.5 85.1V108.1C104.5 108.7 104.233 109 103.7 109H97.7C97.1667 109 96.9 108.7 96.9 108.1V54.3C96.9 53.7 97.1667 53.4 97.7 53.4H123.3C126.3 53.4 127.8 54.8333 127.8 57.7V59.4C127.8 60.1333 127.433 60.5 126.7 60.5H104.5V78H121.3C124.3 78 125.8 79.4667 125.8 82.4V83.9C125.8 84.7 125.4 85.1 124.6 85.1H104.5Z" fill="#ffffff"/>
+  </g>
+
+  <text x="310" y="290" class="name" font-size="92" fill="#000000">Zhan Beissikeyev</text>
+  <text x="310" y="345" class="sub"  font-size="32" fill="#404040">17 y.o. developer &amp; founder · CTO at FOC World</text>
+  <text x="310" y="395" class="sub"  font-size="26" fill="#808080">Built and sold MindZan · NASA Space Apps finalist</text>
+
+  <text x="100" y="560" class="url" font-size="22" fill="#000000" letter-spacing="2">MFHONLEY.COM</text>
+  <line x1="100" y1="575" x2="240" y2="575" stroke="#000000" stroke-width="1"/>
+</svg>
