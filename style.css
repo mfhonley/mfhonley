@@ -1,8 +1,9 @@
 :root {
     --ink: #071d2d;
-    --muted: rgba(7, 29, 45, 0.62);
-    --line: rgba(7, 29, 45, 0.22);
-    --paper: rgba(232, 247, 255, 0.78);
+    --muted: rgba(7, 29, 45, 0.64);
+    --line: rgba(7, 29, 45, 0.18);
+    --glass: rgba(230, 247, 255, 0.7);
+    --blue: #09618f;
 }
 
 *,
@@ -26,17 +27,17 @@ body {
     overflow-x: hidden;
     background: #43aaf3;
     color: var(--ink);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(16px, 1.08vw, 18px);
-    font-weight: 300;
-    line-height: 1.58;
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(15px, 1vw, 17px);
+    font-weight: 400;
+    line-height: 1.5;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
     background: var(--ink);
-    color: #e9f8ff;
+    color: #eaf8ff;
 }
 
 .sea-scene {
@@ -53,8 +54,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, transparent 0%, transparent 34%, rgba(218, 242, 255, 0.28) 48%, rgba(229, 247, 255, 0.86) 68%, rgba(229, 247, 255, 0.92) 100%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(15, 104, 169, 0.08));
+        linear-gradient(90deg, transparent 0%, transparent 42%, rgba(225, 245, 255, 0.1) 60%, rgba(225, 245, 255, 0.28) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(4, 73, 124, 0.06));
 }
 
 @keyframes scene-breathe {
@@ -63,100 +64,155 @@ body {
 }
 
 .page {
-    width: 100%;
-    min-height: 100vh;
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: clamp(48px, 7vh, 78px) clamp(38px, 7vw, 118px);
+    width: 100%;
+    min-height: 100vh;
+    padding: clamp(36px, 5vh, 58px) clamp(38px, 6vw, 96px);
 }
 
 .profile {
-    width: min(50vw, 650px);
+    position: relative;
+    width: min(49vw, 640px);
+    padding: clamp(28px, 3vw, 44px);
+    overflow: hidden;
+    background: var(--glass);
+    box-shadow: 0 24px 80px rgba(5, 60, 97, 0.13);
+    -webkit-backdrop-filter: blur(12px) saturate(1.08);
+    backdrop-filter: blur(12px) saturate(1.08);
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    animation: panel-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 3px;
+    background: var(--ink);
 }
 
 .profile-heading {
-    margin-bottom: clamp(24px, 3.2vh, 32px);
-    animation: enter 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    margin-bottom: clamp(24px, 3vh, 32px);
 }
 
-.eyebrow {
-    margin-bottom: 13px;
-    color: var(--muted);
-    font: 400 10px "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: 0.14em;
+.eyebrow,
+.role,
+.links > p {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     text-transform: uppercase;
 }
 
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+}
+
 h1 {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-    font-size: clamp(48px, 4.4vw, 70px);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.045em;
+    font-size: clamp(42px, 4vw, 62px);
+    font-weight: 600;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
     white-space: nowrap;
 }
 
 h1 span,
 h1 em {
     display: inline;
-}
-
-h1 span {
-    font-size: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
+    font-style: normal;
 }
 
 h1 em {
-    margin-left: 0.12em;
-    font-style: normal;
-    font-weight: 400;
+    margin-left: 0.08em;
+}
+
+.role {
+    margin-top: 13px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
 }
 
 .copy {
     display: grid;
-    gap: clamp(17px, 2.4vh, 24px);
+    gap: clamp(15px, 2vh, 20px);
 }
 
-.copy p {
-    position: relative;
-    max-width: 620px;
-    opacity: 0;
-    animation: enter 680ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.copy > p,
+.media p {
+    max-width: 590px;
+    color: rgba(7, 29, 45, 0.78);
 }
 
-.copy p:nth-child(1) { animation-delay: 100ms; }
-.copy p:nth-child(2) { animation-delay: 170ms; }
-.copy p:nth-child(3) { animation-delay: 240ms; }
-.copy p:nth-child(4) { animation-delay: 310ms; }
-
-.lead > span {
-    display: block;
-    margin-bottom: 9px;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(19px, 1.55vw, 24px);
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
+.copy .lead {
+    max-width: 500px;
+    color: var(--ink);
+    font-size: clamp(20px, 1.65vw, 25px);
+    font-weight: 500;
+    line-height: 1.24;
+    letter-spacing: -0.035em;
 }
 
-.with-video {
-    min-height: 104px;
-    padding-right: 190px;
+strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: rgba(7, 29, 45, 0.38);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+a:hover {
+    color: var(--blue);
+    text-decoration-color: currentColor;
+}
+
+.proof {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.proof span {
+    padding: 10px 10px 10px 0;
+    color: var(--ink);
+    font: 500 9px "IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.proof span + span {
+    padding-left: 10px;
+    border-left: 1px solid var(--line);
+}
+
+.media {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
 }
 
 .video-preview {
-    position: absolute;
-    top: 2px;
-    right: 0;
+    position: relative;
     display: block;
-    width: 170px;
+    justify-self: center;
+    width: min(100%, 230px);
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border: 1px solid rgba(7, 29, 45, 0.28);
+    border: 1px solid rgba(7, 29, 45, 0.22);
     background: #0b2537;
     text-decoration: none;
 }
@@ -176,11 +232,11 @@ h1 em {
     top: 50%;
     left: 50%;
     z-index: 1;
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
     border-radius: 50%;
-    background: rgba(7, 29, 45, 0.68);
+    background: rgba(7, 29, 45, 0.7);
     transform: translate(-50%, -50%);
     transition: background-color 180ms ease, transform 220ms ease;
 }
@@ -191,8 +247,6 @@ h1 em {
     top: 50%;
     left: calc(50% + 2px);
     z-index: 2;
-    width: 0;
-    height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 8px solid #fff;
@@ -200,7 +254,6 @@ h1 em {
 }
 
 .video-preview:hover {
-    color: inherit;
     text-decoration: none;
 }
 
@@ -210,42 +263,25 @@ h1 em {
 }
 
 .video-preview:hover::before {
-    background: rgba(10, 95, 145, 0.88);
+    background: rgba(9, 97, 143, 0.9);
     transform: translate(-50%, -50%) scale(1.06);
 }
 
-strong {
-    font-weight: 500;
-}
-
-a {
-    color: inherit;
-    text-decoration-color: rgba(7, 29, 45, 0.42);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    transition: color 180ms ease, text-decoration-color 180ms ease, text-underline-offset 180ms ease;
-}
-
-a:hover {
-    color: #0a5f91;
-    text-decoration-color: currentColor;
-    text-underline-offset: 2px;
-}
-
 .links {
-    margin-top: clamp(28px, 4vh, 42px);
-    padding-top: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 7px 18px;
+    margin-top: clamp(22px, 3vh, 30px);
+    padding-top: 15px;
     border-top: 1px solid var(--line);
-    opacity: 0;
-    animation: enter 680ms 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .links > p {
-    margin-bottom: 7px;
+    grid-row: 1 / 3;
+    padding-top: 3px;
     color: var(--muted);
-    font: 400 10px "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.12em;
 }
 
 .links nav {
@@ -254,19 +290,18 @@ a:hover {
 }
 
 .links nav span {
-    color: rgba(7, 29, 45, 0.35);
+    color: rgba(7, 29, 45, 0.28);
     white-space: pre;
 }
 
 .email {
-    display: inline-block;
-    margin-top: 6px;
+    width: max-content;
 }
 
-@keyframes enter {
+@keyframes panel-enter {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(14px);
     }
     to {
         opacity: 1;
@@ -281,54 +316,44 @@ a:hover {
 
 @media (max-width: 980px) {
     .sea-scene {
-        background-position: 40% center;
-    }
-
-    .sea-scene::after {
-        background: linear-gradient(90deg, rgba(226, 245, 255, 0.16), rgba(229, 247, 255, 0.84) 48%, rgba(229, 247, 255, 0.94));
+        background-position: 38% center;
     }
 
     .profile {
-        width: min(58vw, 610px);
+        width: min(60vw, 620px);
     }
 }
 
 @media (max-width: 720px) {
     body {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .sea-scene {
-        position: fixed;
         inset: 0;
-        height: auto;
         background: #2b9ff1 url("sea-scene-mobile.webp") center top / cover no-repeat;
         animation: none;
     }
 
-    .sea-scene::before {
-        content: none;
-    }
-
     .sea-scene::after {
-        background: rgba(226, 245, 255, 0.68);
+        background: rgba(226, 245, 255, 0.34);
     }
 
     .page {
         display: block;
-        padding: 54px 24px 64px;
+        min-height: 100svh;
+        padding: 24px 16px 50px;
     }
 
     .profile {
         width: 100%;
-    }
-
-    .profile-heading {
-        margin-bottom: 38px;
+        padding: 26px 20px 28px;
+        background: rgba(232, 248, 255, 0.78);
+        clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     }
 
     h1 {
-        font-size: clamp(46px, 13vw, 66px);
+        font-size: clamp(42px, 13vw, 58px);
         white-space: normal;
     }
 
@@ -342,66 +367,89 @@ a:hover {
     }
 
     .copy {
-        gap: 25px;
+        gap: 19px;
     }
 
-    .lead > span {
-        font-size: clamp(20px, 5.8vw, 25px);
+    .copy .lead {
+        font-size: clamp(21px, 6.4vw, 27px);
     }
 
-    .with-video {
-        min-height: 0;
-        padding-right: 0;
+    .proof {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .proof span {
+        flex: 1 1 auto;
+        padding: 9px 8px 9px 0;
+    }
+
+    .proof span + span {
+        padding-left: 8px;
+    }
+
+    .media {
+        grid-template-columns: 1fr;
     }
 
     .video-preview {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: min(100%, 280px);
-        margin-top: 18px;
-    }
-}
-
-@media (max-width: 390px) {
-    body {
-        font-size: 16px;
+        width: min(100%, 270px);
     }
 
-    .page {
-        padding-left: 19px;
-        padding-right: 19px;
+    .links {
+        grid-template-columns: 1fr;
+    }
+
+    .links > p {
+        grid-row: auto;
     }
 }
 
 @media (max-height: 760px) and (min-width: 721px) {
     body {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .page {
-        padding-top: 34px;
-        padding-bottom: 34px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .profile {
+        padding: 25px 32px;
     }
 
     .profile-heading {
-        margin-bottom: 22px;
+        margin-bottom: 18px;
     }
 
     h1 {
-        font-size: clamp(44px, 4vw, 62px);
+        font-size: clamp(38px, 3.6vw, 52px);
     }
 
     .copy {
-        gap: 14px;
+        gap: 12px;
     }
 
-    .lead > span {
-        font-size: 23px;
+    .copy .lead {
+        font-size: 20px;
+    }
+
+    .proof span {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .media {
+        gap: 10px;
+    }
+
+    .video-preview {
+        width: min(100%, 170px);
     }
 
     .links {
-        margin-top: 22px;
+        margin-top: 18px;
     }
 }
 
