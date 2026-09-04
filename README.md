@@ -2,6 +2,8 @@
 
 **18 · developer and founder · Kazakhstan**
 
+![Pixel-art figure pointing across the sea](sea-scene.webp)
+
 I started programming in 8th grade after spending five years in competitive mental arithmetic and becoming a Republican Champion of Kazakhstan.
 
 Eventually, I returned to the same field with something of my own: [MindZan](https://mindzan.com), a mental-arithmetic platform I built in three weeks. I sold it to FOC for **$10,000** and joined [FOC World](https://focworld.com) as CTO to help scale it.
