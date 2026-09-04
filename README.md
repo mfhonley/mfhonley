@@ -1,55 +1,51 @@
-# honley — workshop
+# Zhan Beissikeyev
 
-**17 · Developer & Founder · Almaty**
+**18 · Developer and founder · Kazakhstan**
 
-I started programming in 8th grade when I realized I wanted to build not just something useful, but something that people would know was made by me.
+[mfhonley.com](https://mfhonley.com) is the personal website of Zhan Beissikeyev, also known online as Honley (`@mfhonley`).
 
-## MindZan → FOC World
+## About
 
-Built [MindZan](https://mindzan.com) — a mental arithmetic platform with modern design, gamification, and dual web/mobile access. Created in 3 weeks. Attracted training centers as early clients.
+Zhan started programming in 8th grade after spending five years in competitive mental arithmetic and becoming a Republican Champion of Kazakhstan.
 
-Sold MindZan for **$10K** to **FOC**, Central Asia's leading mental arithmetic olympiad organizer, and joined them as CTO of **FOC World** to scale it beyond the region.
+He later built [MindZan](https://mindzan.com), a mental-arithmetic platform with gamification and web/mobile access. The product was built in three weeks, sold to FOC for **$10,000**, and led to his current role as CTO of [FOC World](https://focworld.com).
 
-I spent 5 years competing in mental arithmetic and became a republican champion before leaving to learn programming. Came back to rebuild it better — and it worked.
+His other work includes [bfinance.app](https://bfinance.app), [nFactorial School](https://nfactorial.school), crypto payment systems, Telegram Mini Apps, AI monitoring tools, and earlier startup experiments.
 
-## Journey
+## Recognition
 
-My first project was a Telegram bot for school. Then freelance orders, informatics and database olympiads, hackathons — including NASA Space Apps Challenge finals out of 8,000 teams (Oct 2024) and WorldSkills regional gold.
+- NASA Space Apps Challenge 2024 finalist
+- Google Build with AI winner
+- WorldSkills regional gold
+- Republican Mental Arithmetic Champion of Kazakhstan
 
-Worked at Traffy, Asquids, and various Telegram Mini Apps projects. Built a crypto payment gateway that's still being used today. By age 15, I was earning 500,000 tenge/month doing Telegram Mini App backend work.
+## Media
 
-Worked as Software Engineer at [bfinance.app](https://bfinance.app) and Fullstack Middle Developer at [nFactorial.school](https://nfactorial.school) (Sept 2025 – Jan 2026).
+Zhan built [chatly.top](https://chatly.top) in seven days for a [documentary on YouTube](https://youtu.be/x8VpX_Y02dc). The website includes a compact preview of the film.
 
-Summer 2025, got into nFactorial Incubator, made it to Demo Day among 80 projects with [menoai.site](https://menoai.site) (800+ users).
+A longer profile is available from [Digital Business](https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/).
 
-## Earlier Attempts
+## Website
 
-Had startup attempts before MindZan — CatOps (AI-powered monitoring for developers), among others. Researched problems, markets, spaces. Nothing clicked until I returned to a field I actually understand.
+The site is a static, single-page personal profile built with semantic HTML and CSS. It uses Playfair Display and Inter, subtle entrance motion, responsive layouts, and original pixel-art sea imagery.
 
-## Acting
+- `sea-scene.webp` — landscape background for desktop
+- `sea-scene-mobile.webp` — native portrait background for mobile
+- `youtube-preview.webp` — local documentary thumbnail
+- `og-image.png` — 1200 × 630 Open Graph and social-sharing image
+- `sky-clouds.webp` — pixel-cloud artwork used by the OG image
+- `favicon.svg`, `favicon.ico`, `favicon-32x32.png` — browser icons
+- `apple-touch-icon.png` — home-screen icon for Apple devices
 
-Built [chatly.top](https://chatly.top) in 7 days for a [documentary](https://youtu.be/x8VpX_Y02dc).
-
-## Stack
-
-**Languages:** Python, Go, JavaScript, Node.js
-**Frameworks:** FastAPI, Express.js, aiogram
-**Blockchain:** Crypto payments, Web3
-**DevOps:** Docker, Monitoring, AI/ML
+There is no build step. Open `index.html` directly or serve the directory with any static file server.
 
 ## Contact
 
-- **GitHub:** [@mfhonley](https://github.com/mfhonley)
-- **Twitter:** [@mfhonley](https://x.com/mfhonley)
-- **LinkedIn:** [@mfhonley](https://www.linkedin.com/in/mfhonley/)
-- **YouTube:** [@mfhonley](https://www.youtube.com/@mfhonley)
-- **Telegram:** [@mfhonley](https://t.me/mfhonley)
-- **Email:** [zhan@mindzan.com](mailto:zhan@mindzan.com)
+- Email: [zhan@focworld.com](mailto:zhan@focworld.com)
+- GitHub: [@mfhonley](https://github.com/mfhonley)
+- X: [@mfhonley](https://x.com/mfhonley)
+- LinkedIn: [mfhonley](https://www.linkedin.com/in/mfhonley/)
+- Telegram: [@mfhonley](https://t.me/mfhonley)
+- YouTube: [@mfhonley](https://www.youtube.com/@mfhonley)
 
-## Press
-
-- [digitalbusiness.kz — Школьник из Павлодара в 15 лет уже зарабатывал 500 тысяч тенге, а в 17 успешно продал стартап](https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/)
-
----
-
-<sub>17 · Almaty · 2026</sub>
+Last updated: September 4, 2026.
