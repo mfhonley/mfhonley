@@ -1,32 +1,31 @@
-# Zhan Beissikeyev
+**Zhan Beissikeyev**<br>
+Developer & founder, 18 · Kazakhstan
 
-**18 · developer and founder · Kazakhstan**
+<br clear="left">
 
-I started programming in 8th grade after spending five years in competitive mental arithmetic and becoming a Republican Champion of Kazakhstan.
+I build products from problems I know firsthand.
 
-![Pixel-art figure pointing across the sea](readme-banner.webp)
+Five years of competitive mental arithmetic made me a republican champion of Kazakhstan. Later it became [MindZan](https://mindzan.com), built in three weeks and sold to FOC for $10k. Now I scale it as CTO of [FOC World](https://focworld.com).
 
-Eventually, I returned to the same field with something of my own: [MindZan](https://mindzan.com), a mental-arithmetic platform I built in three weeks. I sold it to FOC for **$10,000** and joined [FOC World](https://focworld.com) as CTO to help scale it.
+### Work
 
-Along the way, I worked on [bfinance.app](https://bfinance.app), products at [nFactorial School](https://nfactorial.school), crypto payment systems, Telegram Mini Apps, AI monitoring tools, and plenty of startup attempts that taught me what to build next.
+| | |
+|---|---|
+| [FOC World](https://focworld.com) | CTO, 2026 — now |
+| [MindZan](https://mindzan.com) | founder, sold for $10k |
+| [nFactorial](https://nfactorial.school) | full-stack, 2025 |
+| [bfinance.app](https://bfinance.app) | engineering |
+| [chatly.top](https://chatly.top) | 7 days, for a [documentary](https://youtu.be/x8VpX_Y02dc) |
 
-Some things I am proud of:
+### Awards
 
-- NASA Space Apps Challenge 2024 finalist
-- Google Build with AI winner
-- WorldSkills regional gold
-- Republican Mental Arithmetic Champion of Kazakhstan
+| | |
+|---|---|
+| NASA Space Apps 2024 | finalist |
+| Google Build with AI | winner |
+| WorldSkills | regional gold |
+| Mental arithmetic | republican champion |
 
-I occasionally act too. I built [chatly.top](https://chatly.top) in seven days for a [documentary](https://youtu.be/x8VpX_Y02dc) I appeared in.
+### Contact
 
-You can also read my longer story in [Digital Business](https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/).
-
-## Find me
-
-- Website: [mfhonley.com](https://mfhonley.com)
-- Email: [zhan@focworld.com](mailto:zhan@focworld.com)
-- GitHub: [@mfhonley](https://github.com/mfhonley)
-- X: [@mfhonley](https://x.com/mfhonley)
-- LinkedIn: [mfhonley](https://www.linkedin.com/in/mfhonley/)
-- Telegram: [@mfhonley](https://t.me/mfhonley)
-- YouTube: [@mfhonley](https://www.youtube.com/@mfhonley)
+[mfhonley.com](https://mfhonley.com) · [zhan@focworld.com](mailto:zhan@focworld.com) · [X](https://x.com/mfhonley) · [LinkedIn](https://www.linkedin.com/in/mfhonley/) · [Telegram](https://t.me/mfhonley) · [YouTube](https://www.youtube.com/@mfhonley)

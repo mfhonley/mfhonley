@@ -1,0 +1,21 @@
+{
+  "name": "zhan-event-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3008 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4178 --strictPort",
+    "export:pdf": "node scripts/export-pdf.mjs",
+    "export:notes": "node scripts/export-notes.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.575.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

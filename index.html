@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <meta name="description" content="Zhan Beissikeyev (Honley) is an 18-year-old developer and founder from Kazakhstan. CTO at FOC World, founder of MindZan, NASA Space Apps finalist, and Google Build with AI winner.">
     <meta name="author" content="Zhan Beissikeyev">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#43aaf3">
+    <meta name="theme-color" content="#ffffff">
 
     <link rel="canonical" href="https://mfhonley.com/">
     <link rel="alternate" hreflang="en" href="https://mfhonley.com/">
@@ -45,7 +45,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <script type="application/ld+json">
@@ -78,55 +78,63 @@
       "url": "https://mfhonley.com/",
       "name": "Zhan Beissikeyev — Profile",
       "mainEntity": {"@id": "https://mfhonley.com/#person"},
-      "dateModified": "2026-09-04"
+      "dateModified": "2026-09-29"
     }
     </script>
 </head>
 <body>
-    <div class="sea-scene" aria-hidden="true"></div>
-
-    <main class="page">
-        <article class="profile">
-            <header class="profile-heading">
-                <p class="eyebrow">18 / kazakhstan</p>
-                <h1><span>zhan</span> <em>beissikeyev.</em></h1>
-                <p class="role">developer + founder</p>
-            </header>
-
-            <div class="copy">
-                <p class="lead">i build products from problems i know firsthand.</p>
-
-                <p>five years in mental arithmetic — ending as a republican champion — became <a href="https://mindzan.com" target="_blank" rel="noopener noreferrer">mindzan.com</a>. i built it in three weeks, sold it to FOC for <strong>$10K</strong>, and now scale it as CTO of <a href="https://focworld.com" target="_blank" rel="noopener noreferrer"><strong>FOC World</strong></a>.</p>
-
-                <p>coding since 8th grade: <a href="https://bfinance.app" target="_blank" rel="noopener noreferrer">bfinance.app</a>, <a href="https://nfactorial.school" target="_blank" rel="noopener noreferrer">nFactorial</a>, crypto payments, Telegram Mini Apps, AI monitoring, and the failed startups that made the next one sharper.</p>
-
-                <div class="proof" aria-label="Selected achievements">
-                    <span>NASA finalist</span>
-                    <span>Google winner</span>
-                    <span>WorldSkills gold</span>
-                </div>
-
-                <div class="media">
-                    <p>i occasionally act too. <a href="https://chatly.top" target="_blank" rel="noopener noreferrer">chatly.top</a> was built in seven days for a <a href="https://youtu.be/x8VpX_Y02dc" target="_blank" rel="noopener noreferrer">documentary</a>.</p>
-                    <a class="video-preview" href="https://youtu.be/x8VpX_Y02dc" target="_blank" rel="noopener noreferrer" aria-label="Watch the documentary on YouTube">
-                        <img src="youtube-preview.webp" alt="Documentary preview" width="640" height="360">
-                    </a>
-                </div>
+    <main class="card">
+        <header class="top">
+            <img class="avatar" src="avatar-192.jpg" alt="Zhan Beissikeyev avatar" width="96" height="96">
+            <div>
+                <h1 class="name" data-alt="Honley">Zhan Beissikeyev</h1>
+                <p class="muted">Developer &amp; founder, 18</p>
             </div>
+        </header>
 
-            <div class="links">
-                <p>find me</p>
-                <nav aria-label="Social profiles">
-                    <a href="https://x.com/mfhonley" target="_blank" rel="noopener noreferrer">x.com</a><span> | </span>
-                    <a href="https://github.com/mfhonley" target="_blank" rel="noopener noreferrer">github</a><span> | </span>
-                    <a href="https://www.linkedin.com/in/mfhonley/" target="_blank" rel="noopener noreferrer">linkedin</a><span> | </span>
-                    <a href="https://t.me/mfhonley" target="_blank" rel="noopener noreferrer">telegram</a><span> | </span>
-                    <a href="https://www.youtube.com/@mfhonley" target="_blank" rel="noopener noreferrer">youtube</a>
-                </nav>
-                <a class="email" href="mailto:zhan@focworld.com">zhan@focworld.com</a>
-            </div>
-        </article>
+        <nav class="tabs" role="tablist" aria-label="Sections">
+            <span class="pill" aria-hidden="true"></span>
+            <button role="tab" id="tab-about" aria-controls="about" aria-selected="true">About</button>
+            <button role="tab" id="tab-work" aria-controls="work" aria-selected="false" tabindex="-1">Work</button>
+            <button role="tab" id="tab-awards" aria-controls="awards" aria-selected="false" tabindex="-1">Awards</button>
+            <button role="tab" id="tab-contact" aria-controls="contact" aria-selected="false" tabindex="-1">Contact</button>
+        </nav>
+
+        <div class="view">
+            <section class="panel on" id="about" role="tabpanel" aria-labelledby="tab-about">
+                <p>I build products from problems I know firsthand.</p>
+                <p class="muted">Five years of competitive mental arithmetic made me a republican champion of Kazakhstan. Later it became <a href="https://mindzan.com" target="_blank" rel="noopener noreferrer">MindZan</a> — built in three weeks, sold to FOC for $10k. Now I scale it as CTO of <a href="https://focworld.com" target="_blank" rel="noopener noreferrer">FOC World</a>.</p>
+            </section>
+
+            <section class="panel" id="work" role="tabpanel" aria-labelledby="tab-work">
+                <div class="row"><a href="https://focworld.com" target="_blank" rel="noopener noreferrer">FOC World</a><span>CTO, 2026 — now</span></div>
+                <div class="row"><a href="https://mindzan.com" target="_blank" rel="noopener noreferrer">MindZan</a><span>founder, sold for $10k</span></div>
+                <div class="row"><a href="https://nfactorial.school" target="_blank" rel="noopener noreferrer">nFactorial</a><span>full-stack, 2025</span></div>
+                <div class="row"><a href="https://bfinance.app" target="_blank" rel="noopener noreferrer">bfinance.app</a><span>engineering</span></div>
+                <div class="row"><a href="https://chatly.top" target="_blank" rel="noopener noreferrer">chatly.top</a><span>7 days, for a <a href="https://youtu.be/x8VpX_Y02dc" target="_blank" rel="noopener noreferrer">documentary</a></span></div>
+            </section>
+
+            <section class="panel" id="awards" role="tabpanel" aria-labelledby="tab-awards">
+                <div class="row"><span>NASA Space Apps 2024</span><span>finalist</span></div>
+                <div class="row"><span>Google Build with AI</span><span>winner</span></div>
+                <div class="row"><span>WorldSkills</span><span>regional gold</span></div>
+                <div class="row"><span>Mental arithmetic</span><span>republican champion</span></div>
+            </section>
+
+            <section class="panel" id="contact" role="tabpanel" aria-labelledby="tab-contact">
+                <div class="row"><span>Email</span><a href="mailto:zhan@focworld.com">zhan@focworld.com</a></div>
+                <div class="row"><span>X</span><a href="https://x.com/mfhonley" target="_blank" rel="noopener noreferrer">@mfhonley</a></div>
+                <div class="row"><span>GitHub</span><a href="https://github.com/mfhonley" target="_blank" rel="noopener noreferrer">mfhonley</a></div>
+                <div class="row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/mfhonley/" target="_blank" rel="noopener noreferrer">mfhonley</a></div>
+                <div class="row"><span>Telegram</span><a href="https://t.me/mfhonley" target="_blank" rel="noopener noreferrer">@mfhonley</a></div>
+                <div class="row"><span>YouTube</span><a href="https://www.youtube.com/@mfhonley" target="_blank" rel="noopener noreferrer">@mfhonley</a></div>
+            </section>
+        </div>
+
+        <p class="foot">Kazakhstan · <time id="clock">--:--</time></p>
     </main>
+
+    <script src="motion.js"></script>
 
     <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
     <script defer src="/_vercel/insights/script.js"></script>

@@ -1,0 +1,5 @@
+.DS_Store
+present/node_modules/
+present/.vite-cache/
+present/dist/
+tmp/
