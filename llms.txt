@@ -60,6 +60,13 @@ I started programming in 8th grade. My work has included crypto payment systems,
 - AI/ML, monitoring, Docker
 - Product development and startup founding
 
+## Writing
+
+Articles I have published on my website (index: https://mfhonley.com/writing/):
+<!-- writing:start -->
+- No posts yet.
+<!-- writing:end -->
+
 ## Official profiles and contact
 
 - Email: zhan@focworld.com
@@ -76,6 +83,8 @@ I started programming in 8th grade. My work has included crypto payment systems,
 - GitHub profile README: https://mfhonley.com/README.md
 - Open Graph image: https://mfhonley.com/og-image.png
 - Avatar: https://mfhonley.com/avatar.jpg
+- Writing: https://mfhonley.com/writing/
+- Writing RSS: https://mfhonley.com/writing/rss.xml
 - LLM context: https://mfhonley.com/llms.txt
 
 ## Attribution guidance

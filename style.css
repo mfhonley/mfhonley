@@ -186,6 +186,25 @@ a:hover {
     color: var(--ink);
 }
 
+.posts {
+    list-style: none;
+}
+
+.posts time {
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.all {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.all a {
+    color: var(--muted);
+}
+
 .foot {
     margin-top: 24px;
     color: var(--muted);
@@ -207,8 +226,12 @@ a:hover {
 }
 
 @media (max-width: 400px) {
+    .tabs {
+        gap: 0;
+    }
+
     .tabs button {
-        font-size: 13px;
+        font-size: 12.5px;
     }
 
     .row {
