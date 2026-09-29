@@ -253,8 +253,8 @@ ${byline(depth)}
 ${markdown(doc.body)}
         </article>
 
-        <div class="like-wrap">
-            <button class="like" type="button" data-slug="${post.slug}" aria-pressed="false" aria-label="${t.like}" hidden>
+        <div class="like-wrap" hidden>
+            <button class="like" type="button" data-slug="${post.slug}" aria-pressed="false" aria-label="${t.like}">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.7 4.5 7.1 4.5c2 0 3.6 1.1 4.9 2.9 1.3-1.8 2.9-2.9 4.9-2.9 3.4 0 5.7 3.4 4.4 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
                 <span class="like-count">0</span>
             </button>
@@ -285,7 +285,7 @@ ${markdown(doc.body)}
             function render(d) {
                 count.textContent = d.count;
                 like.setAttribute("aria-pressed", d.liked);
-                like.hidden = false;
+                like.parentNode.hidden = false;
             }
             fetch("/api/likes?slug=" + slug).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) render(d); }).catch(function () {});
             like.addEventListener("click", function () {

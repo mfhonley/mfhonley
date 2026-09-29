@@ -86,8 +86,8 @@
 <ul><li><a href="https://digitalbusiness.kz/2026-09-29/prodal-startap-za-10-tisyach-v-17-let-teper-platformoy-pavlodartsa-polzuyutsya-shkolniki-po-vsemu-miru/" target="_blank" rel="noopener noreferrer">Digital Business, September 2026</a> — about this article and the platform (in Russian)</li><li><a href="https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/" target="_blank" rel="noopener noreferrer">Digital Business, April 2026</a> — interview about MindZan and the deal (in Russian)</li><li><a href="https://focworld.com" target="_blank" rel="noopener noreferrer">FOC World</a> — the federation and the platform</li></ul>
         </article>
 
-        <div class="like-wrap">
-            <button class="like" type="button" data-slug="sold-my-startup" aria-pressed="false" aria-label="Like this post" hidden>
+        <div class="like-wrap" hidden>
+            <button class="like" type="button" data-slug="sold-my-startup" aria-pressed="false" aria-label="Like this post">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.7 4.5 7.1 4.5c2 0 3.6 1.1 4.9 2.9 1.3-1.8 2.9-2.9 4.9-2.9 3.4 0 5.7 3.4 4.4 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
                 <span class="like-count">0</span>
             </button>
@@ -118,7 +118,7 @@
             function render(d) {
                 count.textContent = d.count;
                 like.setAttribute("aria-pressed", d.liked);
-                like.hidden = false;
+                like.parentNode.hidden = false;
             }
             fetch("/api/likes?slug=" + slug).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) render(d); }).catch(function () {});
             like.addEventListener("click", function () {

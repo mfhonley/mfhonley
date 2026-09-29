@@ -61,7 +61,7 @@ a:hover {
 .post {
     width: min(100%, 620px);
     margin: 0 auto;
-    padding: clamp(48px, 12vh, 112px) 16px 96px;
+    padding: clamp(48px, 12vh, 112px) 16px 64px;
     animation: rise 800ms var(--ease) both;
 }
 
@@ -180,8 +180,15 @@ a:hover {
 .like-wrap {
     display: flex;
     justify-content: center;
-    min-height: 44px;
     margin-top: 56px;
+}
+
+.like-wrap[hidden] {
+    display: none;
+}
+
+.like-wrap:not([hidden]) + .end {
+    margin-top: 40px;
 }
 
 .like {
@@ -199,10 +206,6 @@ a:hover {
     font-variant-numeric: tabular-nums;
     cursor: pointer;
     transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease;
-}
-
-.like[hidden] {
-    display: none;
 }
 
 .like svg {
@@ -239,7 +242,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    margin-top: 40px;
+    margin-top: 56px;
     padding-top: 20px;
     border-top: 1px solid var(--line);
     color: var(--muted);
