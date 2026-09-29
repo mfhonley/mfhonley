@@ -296,3 +296,20 @@ a:hover {
         animation: none;
     }
 }
+
+@media print {
+    .progress,
+    .like-wrap,
+    .end {
+        display: none;
+    }
+
+    .post {
+        padding-top: 0;
+        animation: none;
+    }
+
+    .prose a {
+        text-decoration: none;
+    }
+}

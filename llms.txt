@@ -60,11 +60,16 @@ I started programming in 8th grade. My work has included crypto payment systems,
 - AI/ML, monitoring, Docker
 - Product development and startup founding
 
+## Press
+
+- Digital Business (September 29, 2026) — "Продал стартап за $10 тысяч в 17 лет – теперь платформой павлодарца пользуются школьники по всему миру" (about FOC World's platform: 46 schools in 26 cities, tablet-based olympiads): https://digitalbusiness.kz/2026-09-29/prodal-startap-za-10-tisyach-v-17-let-teper-platformoy-pavlodartsa-polzuyutsya-shkolniki-po-vsemu-miru/
+- Digital Business (April 21, 2026) — interview about MindZan and its sale to FOC: https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/
+
 ## Writing
 
 Articles I have published on my website (index: https://mfhonley.com/writing/):
 <!-- writing:start -->
-- No posts yet.
+- Sold my startup for $10K and built a platform for Central Asia's schools (2026-09-29): https://mfhonley.com/writing/sold-my-startup/ — Five months ago I sold MindZan and became CTO of FOC World. This is what we built since — and why we are turning mental arithmetic into a game you play against other people. Russian: https://mfhonley.com/writing/sold-my-startup/ru/
 <!-- writing:end -->
 
 ## Official profiles and contact

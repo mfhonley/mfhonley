@@ -20,6 +20,11 @@ Five years of competitive mental arithmetic made me a republican champion of Kaz
 - WorldSkills — regional gold
 - Mental arithmetic — republican champion of Kazakhstan
 
+### Press
+
+- [Digital Business, Sep 2026](https://digitalbusiness.kz/2026-09-29/prodal-startap-za-10-tisyach-v-17-let-teper-platformoy-pavlodartsa-polzuyutsya-shkolniki-po-vsemu-miru/) — Sold a startup for $10K at 17, now schools around the world use the platform (ru)
+- [Digital Business, Apr 2026](https://digitalbusiness.kz/2026-04-21/shkolnik-iz-pavlodara-v-15-let-uzhe-zarabatival-500-tisyach-tenge-a-v-17-uspeshno-prodal-startap/) — the MindZan story and the deal (ru)
+
 ### Contact
 
 [mfhonley.com](https://mfhonley.com) · [zhan@focworld.com](mailto:zhan@focworld.com) · [X](https://x.com/mfhonley) · [LinkedIn](https://www.linkedin.com/in/mfhonley/) · [Telegram](https://t.me/mfhonley) · [YouTube](https://www.youtube.com/@mfhonley)

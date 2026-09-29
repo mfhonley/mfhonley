@@ -1,8 +1,9 @@
 // Builds /writing from posts/*.md — no dependencies.
 // Usage: node build.mjs
 //
-// posts/<slug>.md  →  writing/<slug>/index.html (+ og.png)
-//                     writing/index.html
+// posts/<slug>.md     →  writing/<slug>/index.html (+ og.png)
+// posts/<slug>.ru.md  →  writing/<slug>/ru/index.html (optional Russian translation)
+//                        writing/index.html, writing/rss.xml
 // and refreshes the Writing tab in index.html, sitemap.xml, llms.txt
 // and api/_slugs.json (the posts /api/likes accepts).
 
@@ -17,8 +18,27 @@ const CHROME = process.env.CHROME || "/Applications/Google Chrome.app/Contents/M
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const fmtDate = (iso) =>
-    new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const fmtDate = (iso, lang = "en") =>
+    new Date(iso + "T00:00:00Z")
+        .toLocaleDateString(lang === "ru" ? "ru-RU" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+        .replace(/ г\.$/, "");
+
+const STR = {
+    en: {
+        minRead: (n) => `${n} min read`,
+        all: "← All writing",
+        follow: "Follow on X",
+        like: "Like this post",
+        other: "Читать на русском",
+    },
+    ru: {
+        minRead: (n) => `${n} мин чтения`,
+        all: "← Все статьи",
+        follow: "Подписаться в X",
+        like: "Лайкнуть статью",
+        other: "Read in English",
+    },
+};
 
 // --- markdown (the subset posts use) ---
 
@@ -73,20 +93,27 @@ function readPost(file) {
         if (!meta[key]) throw new Error(`${file}: front matter needs "${key}"`);
     }
     const body = m[2];
+    const lang = file.endsWith(".ru.md") ? "ru" : "en";
     const words = body.split(/\s+/).filter(Boolean).length;
-    return { ...meta, slug: file.replace(/\.md$/, ""), body, minutes: Math.max(1, Math.round(words / 220)) };
+    return {
+        ...meta,
+        lang,
+        slug: file.replace(/(\.ru)?\.md$/, ""),
+        body,
+        minutes: Math.max(1, Math.round(words / (lang === "ru" ? 180 : 220))),
+    };
 }
 
 // --- open graph image per post, rendered with headless Chrome ---
 
-function renderOg(post) {
+function renderOg(doc, outDir) {
     if (!existsSync(CHROME)) {
         console.warn("  chrome not found, using site og-image");
         return false;
     }
     const dir = join(tmpdir(), "mfhonley-og");
     mkdirSync(dir, { recursive: true });
-    const html = join(dir, `${post.slug}.html`);
+    const html = join(dir, `${doc.slug}.${doc.lang}.html`);
     writeFileSync(html, `<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -94,28 +121,28 @@ function renderOg(post) {
 html,body{width:1200px;height:630px;background:#fff;overflow:hidden}
 body{display:flex;flex-direction:column;justify-content:space-between;padding:96px 110px 72px;font-family:Inter,sans-serif;color:#111;-webkit-font-smoothing:antialiased}
 .kicker{font-size:24px;color:#8a8a8a}
-h1{margin-top:28px;font-size:76px;font-weight:600;letter-spacing:-.035em;line-height:1.05;max-width:960px}
+h1{margin-top:28px;font-size:${doc.title.length > 60 ? 54 : doc.title.length > 36 ? 64 : 76}px;font-weight:600;letter-spacing:-.035em;line-height:1.05;max-width:960px}
 .by{display:flex;align-items:center;gap:18px;font-size:24px}
 .by img{width:56px;height:56px;border-radius:50%;object-fit:cover}
 .by span{color:#8a8a8a}
 </style></head><body>
-<div><p class="kicker">${esc(fmtDate(post.date))} · ${post.minutes} min read</p><h1>${esc(post.title)}</h1></div>
+<div><p class="kicker">${esc(fmtDate(doc.date, doc.lang))} · ${STR[doc.lang].minRead(doc.minutes)}</p><h1>${esc(doc.title)}</h1></div>
 <div class="by"><img src="file://${join(ROOT, "avatar-192.jpg")}"><p>Zhan Beissikeyev <span>· mfhonley.com</span></p></div>
 </body></html>`);
     execFileSync(CHROME, [
         "--headless=new", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
         "--window-size=1200,630", "--virtual-time-budget=5000",
-        `--screenshot=${join(ROOT, "writing", post.slug, "og.png")}`, `file://${html}`,
+        `--screenshot=${join(outDir, "og.png")}`, `file://${html}`,
     ], { stdio: "ignore" });
     return true;
 }
 
 // --- templates ---
 
-function head({ title, description, url, image, type, extra = "", depth }) {
+function head({ title, description, url, image, type, extra = "", depth, lang = "en" }) {
     const up = "../".repeat(depth);
     return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,6 +162,7 @@ function head({ title, description, url, image, type, extra = "", depth }) {
     <meta property="og:image" content="${image}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="${lang === "ru" ? "ru_RU" : "en_US"}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@mfhonley">
     <meta name="twitter:title" content="${esc(title)}">
@@ -164,30 +192,47 @@ const byline = (depth) => {
 const analytics = `    <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
     <script defer src="/_vercel/insights/script.js"></script>`;
 
-function postPage(post, hasOg) {
-    const url = `${SITE}/writing/${post.slug}/`;
+function postPage(post, lang, hasOg) {
+    const doc = lang === "ru" ? post.ru : post;
+    const t = STR[lang];
+    const enUrl = `${SITE}/writing/${post.slug}/`;
+    const ruUrl = `${enUrl}ru/`;
+    const url = lang === "ru" ? ruUrl : enUrl;
+    const depth = lang === "ru" ? 3 : 2;
     const image = hasOg ? `${url}og.png` : `${SITE}/og-image.png`;
+    const alternates = post.ru
+        ? `    <link rel="alternate" hreflang="en" href="${enUrl}">
+    <link rel="alternate" hreflang="ru" href="${ruUrl}">
+    <link rel="alternate" hreflang="x-default" href="${enUrl}">
+`
+        : "";
+    const switcher = post.ru
+        ? lang === "ru"
+            ? ` · <a href="../" hreflang="en" lang="en">${t.other}</a>`
+            : ` · <a href="ru/" hreflang="ru" lang="ru">${t.other}</a>`
+        : "";
     const ld = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        headline: post.title,
-        description: post.description,
-        datePublished: post.date,
-        dateModified: post.updated || post.date,
+        headline: doc.title,
+        description: doc.description,
+        datePublished: doc.date,
+        dateModified: doc.updated || doc.date,
         url,
         image,
         mainEntityOfPage: url,
-        inLanguage: "en",
+        inLanguage: lang,
         author: { "@type": "Person", "@id": `${SITE}/#person`, name: "Zhan Beissikeyev", url: `${SITE}/` },
     };
     return `${head({
-        title: `${post.title} — Zhan Beissikeyev`,
-        description: post.description,
+        title: `${doc.title} — Zhan Beissikeyev`,
+        description: doc.description,
         url,
         image,
         type: "article",
-        depth: 2,
-        extra: `    <meta property="article:published_time" content="${post.date}">
+        depth,
+        lang,
+        extra: `${alternates}    <meta property="article:published_time" content="${doc.date}">
     <meta property="article:author" content="${SITE}/">
     <script type="application/ld+json">
     ${JSON.stringify(ld)}
@@ -197,27 +242,27 @@ function postPage(post, hasOg) {
 <body>
     <div class="progress" aria-hidden="true"></div>
     <main class="post">
-${byline(2)}
+${byline(depth)}
 
         <header>
-            <h1>${esc(post.title)}</h1>
-            <p class="meta"><time datetime="${post.date}">${fmtDate(post.date)}</time> · ${post.minutes} min read</p>
+            <h1>${esc(doc.title)}</h1>
+            <p class="meta"><time datetime="${doc.date}">${fmtDate(doc.date, lang)}</time> · ${t.minRead(doc.minutes)}${switcher}</p>
         </header>
 
         <article class="prose">
-${markdown(post.body)}
+${markdown(doc.body)}
         </article>
 
         <div class="like-wrap">
-            <button class="like" type="button" data-slug="${post.slug}" aria-pressed="false" aria-label="Like this post" hidden>
+            <button class="like" type="button" data-slug="${post.slug}" aria-pressed="false" aria-label="${t.like}" hidden>
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.7 4.5 7.1 4.5c2 0 3.6 1.1 4.9 2.9 1.3-1.8 2.9-2.9 4.9-2.9 3.4 0 5.7 3.4 4.4 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
                 <span class="like-count">0</span>
             </button>
         </div>
 
         <footer class="end">
-            <a href="../">← All writing</a>
-            <a href="https://x.com/intent/follow?screen_name=mfhonley" target="_blank" rel="noopener noreferrer">Follow on X</a>
+            <a href="${"../".repeat(depth - 1)}">${t.all}</a>
+            <a href="https://x.com/intent/follow?screen_name=mfhonley" target="_blank" rel="noopener noreferrer">${t.follow}</a>
         </footer>
     </main>
 
@@ -338,7 +383,12 @@ ${url(`${SITE}/`, today, "1.0", `
       <image:caption>Zhan Beissikeyev — 18-year-old developer and founder from Kazakhstan, CTO at FOC World</image:caption>
     </image:image>`)}
 ${url(`${SITE}/writing/`, latest, "0.8")}
-${posts.map((p) => url(`${SITE}/writing/${p.slug}/`, p.updated || p.date, "0.7")).join("\n")}
+${posts
+    .flatMap((p) => [
+        url(`${SITE}/writing/${p.slug}/`, p.updated || p.date, "0.7"),
+        ...(p.ru ? [url(`${SITE}/writing/${p.slug}/ru/`, p.ru.updated || p.ru.date, "0.6")] : []),
+    ])
+    .join("\n")}
 ${url(`${SITE}/llms.txt`, today, "0.6")}
 ${url(`${SITE}/README.md`, today, "0.5")}
 </urlset>
@@ -356,19 +406,31 @@ function replaceBetween(file, start, end, content) {
 
 // --- build ---
 
-const posts = readdirSync(join(ROOT, "posts"))
+const docs = readdirSync(join(ROOT, "posts"))
     .filter((f) => f.endsWith(".md"))
-    .map(readPost)
+    .map(readPost);
+
+const posts = docs
+    .filter((d) => d.lang === "en")
+    .map((d) => ({ ...d, ru: docs.find((r) => r.lang === "ru" && r.slug === d.slug) || null }))
     .sort((a, b) => b.date.localeCompare(a.date));
+
+for (const d of docs) {
+    if (d.lang === "ru" && !posts.some((p) => p.slug === d.slug)) throw new Error(`posts/${d.slug}.ru.md has no English original`);
+}
 
 rmSync(join(ROOT, "writing"), { recursive: true, force: true });
 mkdirSync(join(ROOT, "writing"), { recursive: true });
 
 for (const post of posts) {
     console.log(`→ ${post.slug}`);
-    mkdirSync(join(ROOT, "writing", post.slug), { recursive: true });
-    const hasOg = renderOg(post);
-    writeFileSync(join(ROOT, "writing", post.slug, "index.html"), postPage(post, hasOg));
+    const dir = join(ROOT, "writing", post.slug);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), postPage(post, "en", renderOg(post, dir)));
+    if (post.ru) {
+        mkdirSync(join(dir, "ru"), { recursive: true });
+        writeFileSync(join(dir, "ru", "index.html"), postPage(post, "ru", renderOg(post.ru, join(dir, "ru"))));
+    }
 }
 
 writeFileSync(join(ROOT, "writing", "index.html"), indexPage(posts));
@@ -388,7 +450,9 @@ replaceBetween("index.html", "<!-- writing:start -->", "<!-- writing:end -->", p
                 `);
 
 replaceBetween("llms.txt", "<!-- writing:start -->", "<!-- writing:end -->", posts.length === 0 ? "\n- No posts yet.\n" : `
-${posts.map((p) => `- ${p.title} (${p.date}): ${SITE}/writing/${p.slug}/ — ${p.description}`).join("\n")}
+${posts
+    .map((p) => `- ${p.title} (${p.date}): ${SITE}/writing/${p.slug}/ — ${p.description}${p.ru ? ` Russian: ${SITE}/writing/${p.slug}/ru/` : ""}`)
+    .join("\n")}
 `);
 
 console.log(`built ${posts.length} post(s)`);
